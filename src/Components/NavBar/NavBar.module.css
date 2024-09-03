@@ -1,0 +1,61 @@
+/* Estilos para la navegación */
+.container_nav {
+  background-color: #030407;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0)
+    ),
+    url(../../../Images/Nav-Background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  color: white;
+}
+
+/* Estilos para los elementos de la lista */
+.list_items {
+  list-style-type: none;
+  padding: 10px;
+  position: relative; /* Necesario para el dropdown */
+  display: inline-block; /* Para mostrar los elementos en línea */
+  color: white;
+}
+
+/* Estilos para los enlaces */
+.enlaces {
+  text-decoration: none;
+  color: grey;
+}
+.enlaces:hover {
+  color: white;
+}
+
+/* Estilos para el contenedor del menú desplegable */
+.dropdown_menu {
+  display: none; /* Ocultar el submenú por defecto */
+  position: absolute;
+  top: 100%; /* Alinear justo debajo del elemento padre */
+  left: 0;
+  background-color: #002743;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  z-index: 1;
+  border: solid #003d5a;
+}
+
+/* Estilos para los elementos del submenú */
+.dropdown_menu .list_items {
+  width: 200px; /* Ajusta el ancho del submenú si es necesario */
+  padding: 10px;
+}
+
+/* Mostrar el submenú cuando se pasa el ratón sobre el elemento padre */
+.dropdown:hover .dropdown_menu {
+  display: block;
+}
