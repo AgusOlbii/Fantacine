@@ -1,4 +1,4 @@
-/* Estilos para la navegación */
+/* NavBar Styles */
 .container_nav {
   background-color: #030407;
   background-image: linear-gradient(
@@ -16,16 +16,19 @@
   color: white;
 }
 
-/* Estilos para los elementos de la lista */
+/* Styles for list items */
 .list_items {
   list-style-type: none;
-  padding: 10px;
-  position: relative; /* Necesario para el dropdown */
-  display: inline-block; /* Para mostrar los elementos en línea */
+  padding: 6px;
+  padding-right: 100px;
+  position: relative;
+  display: inline-block;
   color: white;
+  cursor: pointer;
+  font-size: 19px;
 }
 
-/* Estilos para los enlaces */
+/* Styles for links */
 .enlaces {
   text-decoration: none;
   color: grey;
@@ -34,11 +37,11 @@
   color: white;
 }
 
-/* Estilos para el contenedor del menú desplegable */
+/* Styles for the drop-down menu container */
 .dropdown_menu {
-  display: none; /* Ocultar el submenú por defecto */
+  display: none;
   position: absolute;
-  top: 100%; /* Alinear justo debajo del elemento padre */
+  top: 100%;
   left: 0;
   background-color: #002743;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -48,14 +51,57 @@
   z-index: 1;
   border: solid #003d5a;
 }
-
-/* Estilos para los elementos del submenú */
+.dropdownUser {
+  right: 120px;
+  left: -100px;
+}
+/* Styles for submenu items */
 .dropdown_menu .list_items {
-  width: 200px; /* Ajusta el ancho del submenú si es necesario */
+  width: 200px;
   padding: 10px;
+  font-size: 16px;
 }
 
-/* Mostrar el submenú cuando se pasa el ratón sobre el elemento padre */
+/* Show submenu when hovering the mouse over the parent item */
 .dropdown:hover .dropdown_menu {
   display: block;
+}
+/* Search bar */
+
+.navBarInput {
+  margin-top: 20px;
+  margin-left: 0px;
+  padding: 3px;
+  border: 1px solid #ffffff;
+  background: none;
+  border-radius: 14px;
+  font-size: 16px;
+  height: 20px;
+  color: white;
+  outline: none;
+}
+
+.NavButtons {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+}
+
+.awesomeIcons {
+  color: white;
+  font-size: 27px;
+  margin: 10px;
+}
+
+.navIconsRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+}
+.container_nav > :last-child {
+  margin: auto;
+  padding: 0;
 }
