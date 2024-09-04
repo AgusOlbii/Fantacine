@@ -3,4 +3,12 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   background-color: #0e1315;
+  height: 100vh;
+}
+.div-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  height: 70vh;
 }

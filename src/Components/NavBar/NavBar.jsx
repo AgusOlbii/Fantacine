@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./NavBar.module.css";
+import stylesNav from "./NavBar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
@@ -12,45 +12,45 @@ const NavBar = () => {
 
   return (
     <div>
-      <nav className={styles.container_nav}>
-        <img src="../../../Images/logo1.png" alt="" />
+      <nav className={stylesNav.container_nav}>
+        <img src="../../../Images/logo1.png" alt="Page Logo" />
         <ul>
           {/* Drop-down menu for Categories */}
           <li
-            className={`${styles.list_items} ${styles.dropdown}`}
+            className={`${stylesNav.list_items} ${stylesNav.dropdown}`}
             onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
           >
             Categorías
             {/* Submenú para Categorías */}
             {isCategoriesOpen && (
-              <ul className={styles.dropdown_menu}>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+              <ul className={stylesNav.dropdown_menu}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Todas las películas
                   </a>
                 </li>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Ciencia ficción
                   </a>
                 </li>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Aventura
                   </a>
                 </li>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Terror
                   </a>
                 </li>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Policial
                   </a>
                 </li>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Suspenso
                   </a>
                 </li>
@@ -60,30 +60,30 @@ const NavBar = () => {
 
           {/* Drop-down menu for Directors */}
           <li
-            className={`${styles.list_items} ${styles.dropdown}`}
+            className={`${stylesNav.list_items} ${stylesNav.dropdown}`}
             onClick={() => setIsDirectorsOpen(!isDirectorsOpen)}
           >
             Directores
             {/* Submenú para Directores */}
             {isDirectorsOpen && (
-              <ul className={styles.dropdown_menu}>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+              <ul className={stylesNav.dropdown_menu}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Christopher Nolan
                   </a>
                 </li>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Steven Spielberg
                   </a>
                 </li>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Quentin Tarantino
                   </a>
                 </li>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Martin Scorsese
                   </a>
                 </li>
@@ -94,34 +94,36 @@ const NavBar = () => {
         <input
           type="text"
           placeholder="Buscar..."
-          className={styles.navBarInput}
+          className={stylesNav.navBarInput}
         />
-        <button type="submit" className={styles.NavButtons}>
-          <FontAwesomeIcon icon={faSearch} className={styles.awesomeIcons} />
+        <button type="submit" className={stylesNav.NavButtons}>
+          <FontAwesomeIcon icon={faSearch} className={stylesNav.awesomeIcons} />
         </button>
-        <div className={styles.navIconsRight}>
-          <button type="submit" className={styles.NavButtons}>
-            <FontAwesomeIcon icon={faHome} className={styles.awesomeIcons} />
+        <div className={stylesNav.navIconsRight}>
+          <button type="submit" className={stylesNav.NavButtons}>
+            <FontAwesomeIcon icon={faHome} className={stylesNav.awesomeIcons} />
           </button>
           <li
-            className={`${styles.list_items} ${styles.dropdown}`}
+            className={`${stylesNav.list_items} ${stylesNav.dropdown}`}
             onClick={() => setIsUserOpen(!isUserOpen)}
           >
-            <button type="submit" className={styles.NavButtons}>
+            <button type="submit" className={stylesNav.NavButtons}>
               <FontAwesomeIcon
                 icon={faUserCircle}
-                className={styles.awesomeIcons}
+                className={stylesNav.awesomeIcons}
               />
             </button>
             {isUserOpen && (
-              <ul className={`${styles.dropdown_menu} ${styles.dropdownUser}`}>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+              <ul
+                className={`${stylesNav.dropdown_menu} ${stylesNav.dropdownUser}`}
+              >
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Iniciar sesion
                   </a>
                 </li>
-                <li className={styles.list_items}>
-                  <a href="#" className={styles.enlaces}>
+                <li className={stylesNav.list_items}>
+                  <a href="#" className={stylesNav.enlaces}>
                     Registrarme
                   </a>
                 </li>

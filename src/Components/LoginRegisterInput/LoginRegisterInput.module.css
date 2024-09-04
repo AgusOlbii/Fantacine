@@ -1,0 +1,25 @@
+.div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 60px;
+  flex-direction: column;
+}
+.logRegInputs {
+  background: none;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid white;
+  height: 4vh;
+  width: 20vw;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+.logRegLabels {
+  align-self: start;
+  margin-left: 18px;
+  margin-bottom: 2px;
+  color: grey;
+}
