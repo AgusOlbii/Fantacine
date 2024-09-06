@@ -1,16 +1,20 @@
 import { useState } from "react";
 import LoginRegisterInput from "../../Components/LoginRegisterInput/LoginRegisterInput";
-import style from "./Login.module.css";
-const Login = () => {
+import styleLogin from "./Login.module.css";
+import Button from "../buttom/Button";
+const Login = ({ handleLogin }) => {
   const [passwordValue, setPasswordValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
   return (
-    <div className={style.div}>
-      <form action="Login" className={style.form}>
+    <div className={styleLogin.containerLogin}>
+      <div>
+        <Button handle={handleLogin} />
+      </div>
+      <form action="Login" className={styleLogin.formLogin}>
         <img
           src="./../../Images/Login.png"
           alt="Logo"
-          className={style.image}
+          className={styleLogin.imageLogin}
         />
         <LoginRegisterInput
           type="email"
@@ -24,12 +28,12 @@ const Login = () => {
           onChange={(e) => setPasswordValue(e.target.value)}
           label="Contraseña"
         />
-        <button type="submit" className={style.button}>
+        <button type="submit" className={styleLogin.buttonLogin}>
           Continuar
         </button>
-        <p className={style.p}>
+        <p className={styleLogin.pLogin}>
           ¿No tienes cuenta?{" "}
-          <a className={style.a} href="#">
+          <a className={styleLogin.aLogin} href="#">
             Registrate
           </a>
         </p>

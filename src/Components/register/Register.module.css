@@ -1,0 +1,72 @@
+.containerRegister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 400px;
+  background-color: #002743;
+  border: 1px solid #003d5a;
+}
+.containerRegister > div {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  margin-left: 22rem;
+  margin-bottom: 40rem;
+}
+.formRegister {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.h2Register {
+  color: white;
+}
+.imageRegister {
+  width: 230px;
+  margin-bottom: 5px;
+}
+.buttonRegister {
+  margin-top: 20px;
+  width: 20vw;
+  color: white;
+  font-size: 18px;
+  background-color: #004997;
+  border: none;
+  border-radius: 4px;
+  height: 38px;
+}
+.pRegister {
+  font-size: 12px;
+  color: grey;
+}
+.aRegister {
+  text-decoration: none;
+  color: #004997;
+}
+.termsAndConditions {
+  display: flex;
+  padding-top: 30px;
+}
+.termsAndConditions > input[type="checkbox"] {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 1px solid white;
+  width: 13px;
+  height: 13px;
+  position: relative;
+}
+.termsAndConditions > input[type="checkbox"]:checked::after {
+  content: "\2713"; /* Marca de verificación */
+  color: white; /* Color de la marca */
+  font-size: 10px;
+  position: absolute;
+  left: 2px;
+}
+.termsAndConditions > label {
+  color: white;
+  font-size: 12px;
+  margin-top: 0.1rem;
+  margin-left: 0.3rem;
+}

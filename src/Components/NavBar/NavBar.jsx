@@ -1,15 +1,44 @@
 import { useState } from "react";
 import stylesNav from "./NavBar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faHome } from "@fortawesome/free-solid-svg-icons";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
-
+import Login from "../Login/Login";
+import Register from "../register/Register";
 const NavBar = () => {
+  // creation of UseState and Handle for categories
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+  const handleCategoriesOpen = () => {
+    setIsCategoriesOpen(!isCategoriesOpen);
+    setIsDirectorsOpen(false);
+    setIsUserOpen(false);
+  };
+  // creation of UseState and Handle for directors
   const [isDirectorsOpen, setIsDirectorsOpen] = useState(false);
+  const handleDirectorsOpen = () => {
+    setIsCategoriesOpen(false);
+    setIsDirectorsOpen(!isDirectorsOpen);
+    setIsUserOpen(false);
+  };
+  // creation of UseState and Handle for user
   const [isUserOpen, setIsUserOpen] = useState(false);
-
+  const handleUserOpen = () => {
+    setIsCategoriesOpen(false);
+    setIsDirectorsOpen(false);
+    setLogin(false);
+    setIsUserOpen(!isUserOpen);
+  };
+  // creation of UseState and Handle for login
+  const [login, setLogin] = useState(false);
+  const handleLogin = (e) => {
+    e.stopPropagation();
+    setLogin(!login);
+  };
+  const [register, setRegister] = useState(false);
+  const handleRegister = (e) => {
+    e.stopPropagation();
+    setRegister(!register);
+  };
   return (
     <div>
       <nav className={stylesNav.container_nav}>
@@ -18,10 +47,10 @@ const NavBar = () => {
           {/* Drop-down menu for Categories */}
           <li
             className={`${stylesNav.list_items} ${stylesNav.dropdown}`}
-            onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
+            onClick={handleCategoriesOpen}
           >
             Categorías
-            {/* Submenú para Categorías */}
+            {/* Submenu for Categorías */}
             {isCategoriesOpen && (
               <ul className={stylesNav.dropdown_menu}>
                 <li className={stylesNav.list_items}>
@@ -61,7 +90,7 @@ const NavBar = () => {
           {/* Drop-down menu for Directors */}
           <li
             className={`${stylesNav.list_items} ${stylesNav.dropdown}`}
-            onClick={() => setIsDirectorsOpen(!isDirectorsOpen)}
+            onClick={handleDirectorsOpen}
           >
             Directores
             {/* Submenú para Directores */}
@@ -105,7 +134,7 @@ const NavBar = () => {
           </button>
           <li
             className={`${stylesNav.list_items} ${stylesNav.dropdown}`}
-            onClick={() => setIsUserOpen(!isUserOpen)}
+            onClick={handleUserOpen}
           >
             <button type="submit" className={stylesNav.NavButtons}>
               <FontAwesomeIcon
@@ -118,20 +147,33 @@ const NavBar = () => {
                 className={`${stylesNav.dropdown_menu} ${stylesNav.dropdownUser}`}
               >
                 <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
+                  <button className={stylesNav.enlaces} onClick={handleLogin}>
                     Iniciar sesion
-                  </a>
+                  </button>
                 </li>
                 <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
+                  <button
+                    className={stylesNav.enlaces}
+                    onClick={handleRegister}
+                  >
                     Registrarme
-                  </a>
+                  </button>
                 </li>
               </ul>
             )}
           </li>
         </div>
       </nav>
+      {login && (
+        <div className={stylesNav.divLogin}>
+          <Login handleLogin={handleLogin} />
+        </div>
+      )}
+      {register && (
+        <div className={stylesNav.divLogin}>
+          <Register handleRegister={handleRegister} />
+        </div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,6 @@
-.div {
+.containerLogin {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 50vh;
@@ -7,17 +8,24 @@
   background-color: #002743;
   border: 1px solid #003d5a;
 }
-.form {
+.containerLogin > div {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  margin-left: 22rem;
+  margin-bottom: 18rem;
+}
+.formLogin {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.image {
+.imageLogin {
   width: 230px;
   margin-bottom: 5px;
 }
-.button {
+.buttonLogin {
   margin-top: 20px;
   width: 20vw;
   color: white;
@@ -27,11 +35,11 @@
   border-radius: 4px;
   height: 38px;
 }
-.p {
+.pLogin {
   font-size: 12px;
   color: grey;
 }
-.a {
+.aLogin {
   text-decoration: none;
   color: #004997;
 }

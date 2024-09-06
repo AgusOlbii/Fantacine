@@ -29,8 +29,10 @@
 
 /* Styles for links */
 .enlaces {
+  all: unset;
   text-decoration: none;
   color: grey;
+  background: none;
 }
 .enlaces:hover {
   color: white;
@@ -62,7 +64,7 @@
 }
 
 /* Show submenu when hovering the mouse over the parent item */
-.dropdown:hover .dropdown_menu {
+.dropdown_menu {
   display: block;
 }
 /* Search bar */
@@ -100,7 +102,18 @@
   align-items: center;
   margin-left: auto;
 }
-.container_nav > :last-child {
-  margin: auto;
-  padding: 0;
+
+.divLogin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
 }
