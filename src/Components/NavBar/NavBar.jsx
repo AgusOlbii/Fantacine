@@ -50,7 +50,7 @@ const NavBar = () => {
             onClick={handleCategoriesOpen}
           >
             Categorías
-            {/* Submenu for Categorías */}
+            {/* Submenu for Categories */}
             {isCategoriesOpen && (
               <ul className={stylesNav.dropdown_menu}>
                 <li className={stylesNav.list_items}>
@@ -122,7 +122,7 @@ const NavBar = () => {
         </ul>
         <input
           type="text"
-          placeholder="Buscar..."
+          placeholder="  Buscar..."
           className={stylesNav.navBarInput}
         />
         <button type="submit" className={stylesNav.NavButtons}>

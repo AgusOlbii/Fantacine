@@ -22,6 +22,8 @@
   align-items: center;
 }
 .imageLogin {
+  display: flex;
+  justify-content: center;
   width: 230px;
   margin-bottom: 5px;
 }
