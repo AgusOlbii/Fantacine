@@ -2,6 +2,7 @@ import styleCarrusel from "../carrusel/CarruselStyle.module.css";
 import Slider from "react-slick";
 import CardMovie from "../cardMovies/CardMovie";
 const CarouselMovies = ({ categorieMovies }) => {
+  const categories = Object.keys(categorieMovies);
   const settings = {
     dots: true, // Muestra los puntos de navegación
     infinite: true, // Repite el carrusel de manera infinita
@@ -27,16 +28,19 @@ const CarouselMovies = ({ categorieMovies }) => {
   };
 
   return (
-    <div className={styleCarrusel.carruselContainer}>
-      <h2 className={styleCarrusel.carruselCategorie}>{}</h2>
-      <Slider {...settings}>
-        {categorieMovies.map((movie, index) => (
-          <div key={index}>
-            <CardMovie movies={[movie]} />{" "}
-            {/* Se pasa una película individual como un array */}
-          </div>
-        ))}
-      </Slider>
+    <div className={styleCarrusel.carruselCategorie}>
+      {categories.map((category, index) => (
+        <div key={index}>
+          <h2>{category}</h2>
+          <Slider {...settings}>
+            {categorieMovies[category].map((movie, movieIndex) => (
+              <div key={movieIndex}>
+                <CardMovie movies={[movie]} />{" "}
+              </div>
+            ))}
+          </Slider>
+        </div>
+      ))}
     </div>
   );
 };
