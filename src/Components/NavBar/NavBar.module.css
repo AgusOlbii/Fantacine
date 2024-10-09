@@ -51,6 +51,18 @@
   list-style-type: none;
   z-index: 1;
   border: solid #003d5a;
+  height: 320px;
+  overflow-y: scroll; /* Para permitir desplazamiento vertical */
+  overflow-x: hidden; /* Para ocultar el desbordamiento horizontal */
+}
+/* Agregar un scrollbar siempre visible */
+.dropdown_menu::-webkit-scrollbar {
+  width: 6px;
+}
+/* Editar la barra de scroll */
+.dropdown_menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5); /* Color del "thumb" */
+  border-radius: 4px; /* Bordes redondeados */
 }
 .dropdownUser {
   right: 120px;

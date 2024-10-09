@@ -5,7 +5,7 @@ import { faSearch, faHome } from "@fortawesome/free-solid-svg-icons";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import Login from "../Login/Login";
 import Register from "../register/Register";
-const NavBar = () => {
+const NavBar = ({ movies }) => {
   // creation of UseState and Handle for categories
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const handleCategoriesOpen = () => {
@@ -39,6 +39,13 @@ const NavBar = () => {
     e.stopPropagation();
     setRegister(!register);
   };
+  // Creamos los arreglos solo de categorias y directores para mostrarlos en la lista y utilizamos el set para que no se repitan
+  const uniqueCategories = Array.from(
+    new Set(movies.map((movie) => movie.categorieMovie))
+  );
+  const uniqueDirectors = Array.from(
+    new Set(movies.map((movie) => movie.directorMovie))
+  );
   return (
     <div>
       <nav className={stylesNav.container_nav}>
@@ -50,39 +57,32 @@ const NavBar = () => {
             onClick={handleCategoriesOpen}
           >
             Categorías
-            {/* Submenu for Categories */}
             {isCategoriesOpen && (
               <ul className={stylesNav.dropdown_menu}>
-                <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
-                    Todas las películas
-                  </a>
-                </li>
-                <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
-                    Ciencia ficción
-                  </a>
-                </li>
-                <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
-                    Aventura
-                  </a>
-                </li>
-                <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
-                    Terror
-                  </a>
-                </li>
-                <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
-                    Policial
-                  </a>
-                </li>
-                <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
-                    Suspenso
-                  </a>
-                </li>
+                {uniqueCategories.map((category, index) => (
+                  <li key={index} className={stylesNav.list_items}>
+                    <a href={category} className={stylesNav.enlaces}>
+                      {(() => {
+                        let displayCategory = category;
+                        if (category === "Action") displayCategory = "Accion";
+                        if (category === "Sci-Fi")
+                          displayCategory = "Ciencia ficción";
+                        if (category === "Thriller")
+                          displayCategory = "Suspenso";
+                        if (category === "Crime") displayCategory = "Crimen";
+                        if (category === "Animation")
+                          displayCategory = "Animada";
+                        if (category === "Biography")
+                          displayCategory = "Biografia";
+                        if (category === "Horror") displayCategory = "Terror";
+                        if (category === "Comedy") displayCategory = "Comedia";
+                        if (category === "War") displayCategory = "Belico";
+
+                        return displayCategory;
+                      })()}
+                    </a>
+                  </li>
+                ))}
               </ul>
             )}
           </li>
@@ -93,29 +93,15 @@ const NavBar = () => {
             onClick={handleDirectorsOpen}
           >
             Directores
-            {/* Submenú para Directores */}
             {isDirectorsOpen && (
               <ul className={stylesNav.dropdown_menu}>
-                <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
-                    Christopher Nolan
-                  </a>
-                </li>
-                <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
-                    Steven Spielberg
-                  </a>
-                </li>
-                <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
-                    Quentin Tarantino
-                  </a>
-                </li>
-                <li className={stylesNav.list_items}>
-                  <a href="#" className={stylesNav.enlaces}>
-                    Martin Scorsese
-                  </a>
-                </li>
+                {uniqueDirectors.map((director, index) => (
+                  <li key={index} className={stylesNav.list_items}>
+                    <a href="#" className={stylesNav.enlaces}>
+                      {director}
+                    </a>
+                  </li>
+                ))}
               </ul>
             )}
           </li>

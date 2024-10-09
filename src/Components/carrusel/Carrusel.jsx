@@ -25,13 +25,42 @@ const CarouselMovies = ({ categorieMovies }) => {
       },
     ],
   };
-
+  const selectedMovie = categorieMovies[0]; // Acceder a la primera película
+  let category = selectedMovie.categorieMovie; // Obtener la categoría
+  if (category === "Action") {
+    category = "Accion";
+  }
+  if (category === "Sci-Fi") {
+    category = "Ciencia ficción";
+  }
+  if (category === "Thriller") {
+    category = "Suspenso";
+  }
+  if (category === "Crime") {
+    category = "Crimen";
+  }
+  if (category === "Animation") {
+    category = "Animada";
+  }
+  if (category === "Biography") {
+    category = "Biografia";
+  }
+  if (category === "Horror") {
+    category = "Terror";
+  }
+  if (category === "Comedy") {
+    category = "Comedia";
+  }
+  if (category === "War") {
+    category = "Belico";
+  }
   return (
     <div className={styleCarrusel.carruselContainer}>
-      <h2 className={styleCarrusel.carruselCategorie}>{}</h2>
+      <h2 className={styleCarrusel.carruselCategorie}>{category}</h2>
       <Slider {...settings}>
         {categorieMovies.map((movie, index) => (
           <div key={index}>
+            {/* <h1 style={{ color: "white" }}>{movie.movieName}</h1> */}
             <CardMovie movies={[movie]} />{" "}
             {/* Se pasa una película individual como un array */}
           </div>
